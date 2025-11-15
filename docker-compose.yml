@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - MODEL_NAME=${MODEL_NAME:-gpt-3.5-turbo}
+      - CHUNK_SIZE=${CHUNK_SIZE:-500}
+      - CHUNK_OVERLAP=${CHUNK_OVERLAP:-50}
+    volumes:
+      - ./src:/app/src
+    restart: unless-stopped
