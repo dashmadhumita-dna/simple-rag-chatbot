@@ -1,9 +1,9 @@
 """
 RAG Engine - Retrieval-Augmented Generation Logic
 """
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import ChatOpenAI
-from langchain.prompts import ChatPromptTemplate
+from langchain_core.prompts import ChatPromptTemplate
 from langchain_community.vectorstores import Chroma
 import os
 
